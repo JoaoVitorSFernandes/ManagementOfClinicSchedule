@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ManagementOfClinicSchedule.Domain.Core\ManagementOfClinicSchedule.Domain.Core.csproj" />
+    <ProjectReference Include="..\ManagementOfClinicSchedule.Domain\ManagementOfClinicSchedule.Domain.csproj" />
   </ItemGroup>
 
 </Project>

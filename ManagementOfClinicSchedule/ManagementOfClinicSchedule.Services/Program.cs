@@ -1,8 +1,10 @@
 using ManagementOfClinicSchedule.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<DataContext>()
+var connection = builder.Configuration.GetConnectionString("defaultConnection");
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(connection));
 
 var app = builder.Build();
 
