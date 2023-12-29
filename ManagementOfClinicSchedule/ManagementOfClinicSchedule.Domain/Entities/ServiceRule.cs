@@ -3,6 +3,6 @@
     public class ServiceRule : Base
     {
         public DateTime Date { get; set; }
-        public IList<Timesheet> Timesheets { get; set; }
+        public List<Timesheet> Timesheet { get; set; } = new();
     }
 }
