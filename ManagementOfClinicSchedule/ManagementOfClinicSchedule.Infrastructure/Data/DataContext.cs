@@ -1,4 +1,5 @@
 ﻿using ManagementOfClinicSchedule.Domain.Entities;
+using ManagementOfClinicSchedule.Infrastructure.Data.Map;
 using Microsoft.EntityFrameworkCore;
 
 namespace ManagementOfClinicSchedule.Infrastructure.Data
@@ -15,6 +16,11 @@ namespace ManagementOfClinicSchedule.Infrastructure.Data
             : base(options)
         { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ServiceRuleMap());
+            modelBuilder.ApplyConfiguration(new TimesheetMap());
+        }
 
     }
 }

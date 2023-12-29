@@ -8,16 +8,16 @@ namespace ManagementOfClinicSchedule.Infrastructure.Data.Map
     {
         public void Configure(EntityTypeBuilder<Timesheet> builder)
         {
-            builder.ToTable("ServiceRule");
+            builder.ToTable("Timesheet");
 
             builder.HasKey(x => x.Id)
-                .HasName("PK_ServiceRule");
+                .HasName("PK_Timesheet");
 
             builder.Property(x => x.StartTime)
                 .IsRequired()
                 .HasColumnType("SMALLDATETIME")
-                .HasColumnName("StartTime");            
-            
+                .HasColumnName("StartTime");
+
             builder.Property(x => x.EndDate)
                 .IsRequired()
                 .HasColumnType("SMALLDATETIME")
@@ -27,6 +27,11 @@ namespace ManagementOfClinicSchedule.Infrastructure.Data.Map
                 .HasColumnName("IsBusy")
                 .HasColumnType("BIT")
                 .HasDefaultValue(false);
+
+            builder.HasOne(x => x.ServiceRule)
+                .WithMany(x => x.Timesheets)
+                .HasConstraintName("FK_Timesheet_ServiceRule")
+                .OnDelete(DeleteBehavior.ClientSetNull);
         }
     }
 }

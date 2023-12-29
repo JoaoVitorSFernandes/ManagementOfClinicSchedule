@@ -8,6 +8,7 @@ namespace ManagementOfClinicSchedule.Domain.Entities
         public DateTime EndDate { get; set; }
         public bool IsBusy { get; set; }
 
+        public int ServiceRuleId { get; set; }
         public ServiceRule ServiceRule { get; set; }
 
     }
