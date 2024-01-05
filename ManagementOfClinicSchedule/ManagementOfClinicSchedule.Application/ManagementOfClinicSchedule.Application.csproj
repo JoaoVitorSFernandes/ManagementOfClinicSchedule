@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\ManagementOfClinicSchedule.Domain.Core\ManagementOfClinicSchedule.Domain.Core.csproj" />
+    <ProjectReference Include="..\ManagementOfClinicSchedule.Domain\ManagementOfClinicSchedule.Domain.csproj" />
   </ItemGroup>
 
 </Project>

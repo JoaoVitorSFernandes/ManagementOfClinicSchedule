@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CrossCutting\IOC\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ManagementOfClinicSchedule.Application\ManagementOfClinicSchedule.Application.csproj" />
     <ProjectReference Include="..\ManagementOfClinicSchedule.Domain.Core\ManagementOfClinicSchedule.Domain.Core.csproj" />
+    <ProjectReference Include="..\ManagementOfClinicSchedule.Domain.Services\ManagementOfClinicSchedule.Domain.Services.csproj" />
     <ProjectReference Include="..\ManagementOfClinicSchedule.Domain\ManagementOfClinicSchedule.Domain.csproj" />
   </ItemGroup>
 

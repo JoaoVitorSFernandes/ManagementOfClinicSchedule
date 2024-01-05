@@ -31,7 +31,7 @@ namespace ManagementOfClinicSchedule.Infrastructure.Data.Map
             builder.HasOne(x => x.ServiceRule)
                 .WithMany(x => x.Timesheets)
                 .HasConstraintName("FK_Timesheet_ServiceRule")
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .OnDelete(DeleteBehavior.ClientCascade);
         }
     }
 }

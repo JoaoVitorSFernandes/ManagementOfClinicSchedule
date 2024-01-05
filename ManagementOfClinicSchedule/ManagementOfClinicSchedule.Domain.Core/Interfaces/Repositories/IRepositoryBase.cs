@@ -6,6 +6,7 @@
         Task AddRange(IEnumerable<TEntity> entity);
         Task Remove(TEntity entity);
         Task RemoveRange(IEnumerable<TEntity> entity);
-        Task<IEnumerable<TEntity>> GetAll(TEntity entity);
+        Task<IEnumerable<TEntity>> GetAll();
+        Task<TEntity> GetById(int id);
     }
 }

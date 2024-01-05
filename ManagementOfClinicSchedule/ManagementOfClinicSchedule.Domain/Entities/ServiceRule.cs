@@ -4,5 +4,7 @@
     {
         public DateTime Date { get; set; }
         public IList<Timesheet> Timesheets { get; set; }
+
+        public ServiceRule() { }
     }
 }

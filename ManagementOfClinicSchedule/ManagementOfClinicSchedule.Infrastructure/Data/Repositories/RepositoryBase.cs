@@ -12,7 +12,12 @@ namespace ManagementOfClinicSchedule.Infrastructure.Data.Repositories
             _dataContext = dataContext;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAll(TEntity entity)
+        public virtual async Task<TEntity> GetById(int id)
+        {
+            return _dataContext.Set<TEntity>().Find(id);
+        }
+
+        public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
             try
             {
